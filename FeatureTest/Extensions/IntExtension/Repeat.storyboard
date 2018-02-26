@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Rf4-37-kN9">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Repeat View Controller-->
+        <scene sceneID="IeU-hQ-Zhn">
+            <objects>
+                <viewController storyboardIdentifier="repeatVC" id="Rf4-37-kN9" customClass="RepeatViewController" customModule="FeatureTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zob-a0-Fru">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Count" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L4T-se-dON">
+                                <rect key="frame" x="164" y="120" width="46.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LYv-ua-dbg">
+                                <rect key="frame" x="135.5" y="191" width="104" height="30"/>
+                                <state key="normal" title="Increase Count"/>
+                                <connections>
+                                    <action selector="onRepeat:" destination="Rf4-37-kN9" eventType="touchUpInside" id="HIL-Ih-yHF"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="L4T-se-dON" firstAttribute="centerX" secondItem="zob-a0-Fru" secondAttribute="centerX" id="326-gT-P49"/>
+                            <constraint firstItem="LYv-ua-dbg" firstAttribute="centerX" secondItem="zob-a0-Fru" secondAttribute="centerX" id="LFh-9f-Et3"/>
+                            <constraint firstItem="L4T-se-dON" firstAttribute="top" secondItem="xD6-DN-R1I" secondAttribute="top" constant="100" id="fRE-Dm-0N8"/>
+                            <constraint firstItem="LYv-ua-dbg" firstAttribute="top" secondItem="L4T-se-dON" secondAttribute="bottom" constant="50" id="osr-Nk-lyl"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="xD6-DN-R1I"/>
+                    </view>
+                    <connections>
+                        <outlet property="repeatLabel" destination="L4T-se-dON" id="wxz-EU-eUo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oyA-Jy-BgD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="370" y="-193"/>
+        </scene>
+    </scenes>
+</document>

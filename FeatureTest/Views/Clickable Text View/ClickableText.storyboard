@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Hom-sc-Z4L">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Clickable Text View Controller-->
+        <scene sceneID="FOa-lz-KNJ">
+            <objects>
+                <viewController storyboardIdentifier="clickableTextVC" id="Hom-sc-Z4L" customClass="ClickableTextViewController" customModule="FeatureTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="T0G-Dy-dRp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Hello World" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="6Ii-GL-P80">
+                                <rect key="frame" x="67" y="83" width="240" height="200"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="gMM-Kn-isW"/>
+                                    <constraint firstAttribute="width" constant="240" id="sFx-yW-Uya"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="6Ii-GL-P80" firstAttribute="centerX" secondItem="T0G-Dy-dRp" secondAttribute="centerX" id="B1d-wD-TIl"/>
+                            <constraint firstItem="6Ii-GL-P80" firstAttribute="top" secondItem="Yts-rH-waJ" secondAttribute="top" constant="63" id="Mrs-9n-jEw"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Yts-rH-waJ"/>
+                    </view>
+                    <connections>
+                        <outlet property="termsTextView" destination="6Ii-GL-P80" id="Fh4-Wl-vZA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qiv-xa-IZw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-97" y="111"/>
+        </scene>
+    </scenes>
+</document>

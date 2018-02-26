@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0uG-ju-MPE">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Lottie Animation View Controller-->
+        <scene sceneID="wru-DN-kmt">
+            <objects>
+                <viewController storyboardIdentifier="lottiieAnimationVC" id="0uG-ju-MPE" customClass="LottieAnimationViewController" customModule="FeatureTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MdM-to-4UO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0hQ-fE-SOa">
+                                <rect key="frame" x="149.5" y="296" width="75" height="75"/>
+                                <color key="backgroundColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="6Ya-4m-fBm"/>
+                                    <constraint firstAttribute="height" constant="75" id="KcT-HF-f26"/>
+                                </constraints>
+                                <state key="normal" title="Animate"/>
+                                <connections>
+                                    <action selector="onClick:" destination="0uG-ju-MPE" eventType="touchUpInside" id="mWv-sA-PvU"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="0hQ-fE-SOa" firstAttribute="centerY" secondItem="MdM-to-4UO" secondAttribute="centerY" id="xDQ-4G-xcR"/>
+                            <constraint firstItem="0hQ-fE-SOa" firstAttribute="centerX" secondItem="MdM-to-4UO" secondAttribute="centerX" id="zIJ-iy-cVh"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ekh-6J-U1y"/>
+                    </view>
+                    <connections>
+                        <outlet property="button" destination="0hQ-fE-SOa" id="hHI-z8-kPJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w17-On-JTZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4" y="111"/>
+        </scene>
+    </scenes>
+</document>

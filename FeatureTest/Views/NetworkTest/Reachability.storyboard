@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Reachability View Controller-->
+        <scene sceneID="pjA-VF-YvG">
+            <objects>
+                <viewController storyboardIdentifier="reachabilityVC" id="HXK-N6-68o" customClass="ReachabilityViewController" customModule="FeatureTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Eu1-da-e9i">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KbT-ug-GYi">
+                                <rect key="frame" x="110" y="191" width="154" height="30"/>
+                                <state key="normal" title="Check Network Status"/>
+                                <connections>
+                                    <action selector="onNetworkCheck:" destination="HXK-N6-68o" eventType="touchUpInside" id="9dN-DJ-k7V"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Network Status" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R9i-RK-e6z">
+                                <rect key="frame" x="128.5" y="120" width="118" height="21"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="KbT-ug-GYi" firstAttribute="centerX" secondItem="Eu1-da-e9i" secondAttribute="centerX" id="O6o-XO-OrY"/>
+                            <constraint firstItem="KbT-ug-GYi" firstAttribute="top" secondItem="R9i-RK-e6z" secondAttribute="bottom" constant="50" id="V4T-t8-vYt"/>
+                            <constraint firstItem="R9i-RK-e6z" firstAttribute="centerX" secondItem="Eu1-da-e9i" secondAttribute="centerX" id="iEe-vs-9aX"/>
+                            <constraint firstItem="R9i-RK-e6z" firstAttribute="top" secondItem="O2X-hU-kBZ" secondAttribute="top" constant="100" id="m7g-ih-Zwy"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="O2X-hU-kBZ"/>
+                    </view>
+                    <connections>
+                        <outlet property="networkStatusLabel" destination="R9i-RK-e6z" id="TrQ-am-ueC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f0T-e7-jmy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="14" y="23"/>
+        </scene>
+    </scenes>
+</document>
