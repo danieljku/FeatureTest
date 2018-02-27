@@ -69,50 +69,58 @@ class FloatingActionWindow: UIWindow {
     }
     
     @objc func didPan(panner: UIPanGestureRecognizer) {
-        let offset = panner.translation(in: currentView)
+        let translation = panner.translation(in: currentView)
         panner.setTranslation(CGPoint.zero, in: currentView)
         var center = self.center
-        center.x += offset.x
-        center.y += offset.y
+        center.x += translation.x
+        center.y += translation.y
         self.center = center
 
         if panner.state == .ended || panner.state == .cancelled {
             UIView.animate(withDuration: 0.3) {
-                self.snapButtonToSocket()
+                self.snapButtonToHome()
             }
         }
     }
     
-    private func snapButtonToSocket() {
-        var bestSocket = CGPoint.zero
-        var distanceToBestSocket = CGFloat.infinity
-        let center = self.center
-        for socket in sockets {
-            let distance = hypot(center.x - socket.x, center.y - socket.y)
-            if distance < distanceToBestSocket {
-                distanceToBestSocket = distance
-                bestSocket = socket
-            }
-        }
-        self.center = bestSocket
-    }
-
-    private var sockets: [CGPoint] {
+    private func snapButtonToHome() {
         let buttonSize = self.button.bounds.size
         guard let rect = currentView?.bounds.insetBy(dx: 4 + buttonSize.width / 2, dy: 4 + buttonSize.height / 2) else {fatalError()}
-        let sockets: [CGPoint] = [
-            CGPoint(x: rect.minX + 20, y: rect.minY + 20),
-            CGPoint(x: rect.minX + 20, y: rect.maxY - (20 + yOffset)),
-            CGPoint(x: rect.maxX - 20, y: rect.minY + 20),
-            CGPoint(x: rect.maxX - 20, y: rect.maxY - (20 + yOffset)),
-            CGPoint(x: rect.maxX - 20, y: rect.midY),
-            CGPoint(x: rect.minX + 20, y: rect.midY),
-            CGPoint(x: rect.midX, y: rect.maxY - (20 + yOffset)),
-            CGPoint(x: rect.midX, y: rect.minY + 20)
-        ]
-
-        return sockets
+        let bestSocket = CGPoint(x: rect.maxX - 20, y: rect.maxY - (20 + yOffset))
+        self.center = bestSocket
     }
+    
+    //    private func snapButtonToSocket() {
+    //        var bestSocket = CGPoint.zero
+    //        var distanceToBestSocket = CGFloat.infinity
+    //        let center = self.center
+    //        for socket in sockets {
+    //            let distance = hypot(center.x - socket.x, center.y - socket.y)
+    //            if distance < distanceToBestSocket {
+    //                distanceToBestSocket = distance
+    //                bestSocket = socket
+    //            }
+    //        }
+    //        self.center = bestSocket
+    //    }
+
+
+//    private var sockets: [CGPoint] {
+//        let buttonSize = self.button.bounds.size
+//        guard let rect = currentView?.bounds.insetBy(dx: 4 + buttonSize.width / 2, dy: 4 + buttonSize.height / 2) else {fatalError()}
+//        let sockets: [CGPoint] = [
+//            CGPoint(x: rect.minX + 20, y: rect.minY + 20),
+//            CGPoint(x: rect.minX + 20, y: rect.maxY - (20 + yOffset)),
+//            CGPoint(x: rect.maxX - 20, y: rect.minY + 20),
+//            CGPoint(x: rect.maxX - 20, y: rect.maxY - (20 + yOffset)),
+//            CGPoint(x: rect.maxX - 20, y: rect.midY),
+//            CGPoint(x: rect.minX + 20, y: rect.midY),
+//            CGPoint(x: rect.midX, y: rect.maxY - (20 + yOffset)),
+//            CGPoint(x: rect.midX, y: rect.minY + 20)
+//        ]
+//
+//        return sockets
+//    }
     
     @objc func didDeviceRotate() {
         self.frame.origin = CGPoint(x: mainWindow.bounds.maxX - 95, y: mainWindow.bounds.maxY - (95 + yOffset))
