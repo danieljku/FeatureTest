@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreGraphics
 import UIKit
 
 class FloatingActionWindow: UIWindow {
@@ -14,9 +15,12 @@ class FloatingActionWindow: UIWindow {
     var isKeyboardPresent = false
     var currentView: UIView?
     var yOffset: CGFloat!
+    var originalCenter: CGPoint!
+    var initialTranslation: CGPoint!
+    var startingTranslationFlag = true
     
     let button = UIButton(frame: CGRect(origin: CGPoint.init(x: 0, y: 0), size: CGSize(width: 75, height: 75)))
-    
+
     init(yOffset: CGFloat, view: UIView) {
         super.init(frame: CGRect(origin: CGPoint.init(x: mainWindow.bounds.maxX - 95, y: mainWindow.bounds.maxY - (yOffset + 95)), size: CGSize(width: 75, height: 75)))
         
@@ -58,7 +62,7 @@ class FloatingActionWindow: UIWindow {
         button.layer.cornerRadius = self.frame.height / 2
         button.layer.masksToBounds = true
         
-        let pan = UIPanGestureRecognizer(target: self, action: #selector(didPan(panner:)))
+        let pan = UIPanGestureRecognizer(target: self, action: #selector(didPan(panner:))) 
         self.addGestureRecognizer(pan)
         
         self.addSubview(button)
@@ -70,16 +74,85 @@ class FloatingActionWindow: UIWindow {
     
     @objc func didPan(panner: UIPanGestureRecognizer) {
         let translation = panner.translation(in: currentView)
-        panner.setTranslation(CGPoint.zero, in: currentView)
-        var center = self.center
-        center.x += translation.x
-        center.y += translation.y
-        self.center = center
+        let velocity = panner.velocity(in: currentView)
+        let radius = mainWindow.bounds.width
 
-        if panner.state == .ended || panner.state == .cancelled {
-            UIView.animate(withDuration: 0.3) {
-                self.snapButtonToHome()
+        if panner.state == .began {
+            originalCenter = self.center
+        } else if panner.state == .changed {
+            guard let start = originalCenter else {return}
+
+            if startingTranslationFlag {
+                initialTranslation = translation
+                startingTranslationFlag = false
             }
+            var newX = start.x + translation.x
+            var newY = start.y + translation.y
+
+            print("translation x: \(translation.x)")
+            print("translation y: \(translation.y)")
+            
+            if initialTranslation.x > initialTranslation.y {
+                newX = originalCenter.x
+                self.alpha = (radius - (originalCenter.y - newY)) / radius
+            } else {
+                newY = originalCenter.y
+                self.alpha = newX / radius
+            }
+            
+            let newCenter = CGPoint(x: newX, y: newY )
+            
+            //Quarter circle radius
+            // let radiusSquared = (radius) * (radius)
+            //let xSquared = (mainWindow.bounds.width - newX) * (mainWindow.bounds.width - newX)
+            //let ySquared = (mainWindow.bounds.height - newY) * (mainWindow.bounds.height - newY)
+//            let theta = atan2((mainWindow.bounds.height - newY), (mainWindow.bounds.width - newX))
+//            let newPoint = CGPoint(x: mainWindow.bounds.width - (radius)*cos(theta), y: mainWindow.bounds.height - (radius)*sin(theta))
+//            if (xSquared + ySquared) > radiusSquared {
+//                newCenter = newPoint
+//            }
+            
+            //            if initialTranslation.x > initialTranslation.y && initialTranslation.y < 0 {
+            //                //newX = originalCenter.x
+            //                self.alpha = (radius - (originalCenter.y - newY)) / radius
+            //            } else if initialTranslation.x < initialTranslation.y && initialTranslation.x < 0 {
+            //                //newY = originalCenter.y
+            //                self.alpha = (radius - (originalCenter.x - newX)) / radius
+            //            } else if initialTranslation.x < initialTranslation.y && initialTranslation.y > 0 {
+            //                //newX = originalCenter.x
+            //                self.alpha = (radius - (originalCenter.y - newY)) / radius
+            //            } else {
+            //                //newY = originalCenter.y
+            //                self.alpha = (radius - (originalCenter.x - newX)) / radius
+            //            }
+            self.center = newCenter
+            
+        } else if panner.state == .ended || panner.state == .cancelled {
+            if velocity.x < -150 && (velocity.x < velocity.y) {
+                UIView.animate(withDuration: 0.3) {
+                    self.center = CGPoint(x: -200, y: self.center.y)
+                }
+            } else if velocity.y < -150 && (velocity.x > velocity.y) {
+                UIView.animate(withDuration: 0.3) {
+                    self.center = CGPoint(x: self.center.x, y: -200)
+                }
+            } else if velocity.x > 100 || velocity.y > 100 {
+                UIView.animate(withDuration: 0.3) {
+                    self.center = CGPoint(x: 1500, y: 1500)
+                }
+            } else if (center.x < 0 || center.y < mainWindow.bounds.height - radius) {
+                UIView.animate(withDuration: 0.3) {
+                    self.center = CGPoint(x: -200, y: -200)
+                }
+            } else {
+                startingTranslationFlag = true
+                self.alpha = 1
+
+                UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: [], animations: {
+                    self.snapButtonToHome()
+                }, completion: nil)
+            }
+            
         }
     }
     
