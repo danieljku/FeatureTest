@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,8 +17,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         //Change initial storyboard to corresponding feature storyboard
-        setRootViewController(storyboardName: "FloatingActionButton", storyboardIdentifier: "floatingActionButtonVC")
+//        setRootViewController(storyboardName: "Snapchat", storyboardIdentifier: "snapchatVC")
 
+//        let center = UNUserNotificationCenter.current()
+//        let options: UNAuthorizationOptions = [.alert, .sound, .badge];
+//
+//        center.requestAuthorization(options: options) {
+//            (granted, error) in
+//            if !granted {
+//                print("Something went wrong")
+//            }
+//        }
         return true
     }
 

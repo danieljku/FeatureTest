@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Psh-eh-ko7">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Photo Page View Controller-->
+        <scene sceneID="8Rz-pg-zDL">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" pageSpacing="50" navigationOrientation="horizontal" spineLocation="none" id="Psh-eh-ko7" customClass="PhotoPageViewController" customModule="FeatureTest" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pdU-Ch-ATz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1206" y="673"/>
+        </scene>
+        <!--Preview Photo View Controller-->
+        <scene sceneID="uBY-RV-Elq">
+            <objects>
+                <viewController storyboardIdentifier="PreviewPhotoViewController" id="ZhM-oW-ana" customClass="PreviewPhotoViewController" customModule="FeatureTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WSz-6b-dp0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TV2-ps-wac">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="knH-C4-r5h">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="knH-C4-r5h" secondAttribute="trailing" id="7FI-ga-bzw"/>
+                                    <constraint firstItem="knH-C4-r5h" firstAttribute="leading" secondItem="TV2-ps-wac" secondAttribute="leading" id="a54-DI-5NW"/>
+                                    <constraint firstAttribute="bottom" secondItem="knH-C4-r5h" secondAttribute="bottom" id="fh0-UO-eSj"/>
+                                    <constraint firstItem="knH-C4-r5h" firstAttribute="top" secondItem="TV2-ps-wac" secondAttribute="top" id="yMA-3o-lhN"/>
+                                </constraints>
+                            </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8pk-TB-Lk5">
+                                <rect key="frame" x="335" y="30" width="30" height="30"/>
+                                <state key="normal" title="Exit"/>
+                                <connections>
+                                    <action selector="onExit:" destination="ZhM-oW-ana" eventType="touchUpInside" id="z2K-qK-JiZ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="YFM-X8-U4F" firstAttribute="trailing" secondItem="8pk-TB-Lk5" secondAttribute="trailing" constant="10" id="19P-YK-oXh"/>
+                            <constraint firstItem="TV2-ps-wac" firstAttribute="top" secondItem="WSz-6b-dp0" secondAttribute="top" id="B3r-hT-931"/>
+                            <constraint firstItem="knH-C4-r5h" firstAttribute="height" secondItem="WSz-6b-dp0" secondAttribute="height" id="JxA-Nh-tQM"/>
+                            <constraint firstItem="YFM-X8-U4F" firstAttribute="trailing" secondItem="TV2-ps-wac" secondAttribute="trailing" id="SL5-m7-Pdi"/>
+                            <constraint firstItem="TV2-ps-wac" firstAttribute="leading" secondItem="YFM-X8-U4F" secondAttribute="leading" id="SRi-I3-obD"/>
+                            <constraint firstItem="8pk-TB-Lk5" firstAttribute="top" secondItem="YFM-X8-U4F" secondAttribute="top" constant="10" id="Vz7-mW-eap"/>
+                            <constraint firstItem="YFM-X8-U4F" firstAttribute="bottom" secondItem="TV2-ps-wac" secondAttribute="bottom" id="c3X-O8-oFS"/>
+                            <constraint firstItem="TV2-ps-wac" firstAttribute="height" secondItem="WSz-6b-dp0" secondAttribute="height" id="mfz-Z8-cx0"/>
+                            <constraint firstItem="knH-C4-r5h" firstAttribute="width" secondItem="WSz-6b-dp0" secondAttribute="width" id="pRo-sP-TMy"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="YFM-X8-U4F"/>
+                    </view>
+                    <connections>
+                        <outlet property="photoImageView" destination="knH-C4-r5h" id="Nej-km-lEL"/>
+                        <outlet property="scrollView" destination="TV2-ps-wac" id="0zh-IO-R9A"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3cs-Vf-h30" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-463" y="672"/>
+        </scene>
+    </scenes>
+</document>

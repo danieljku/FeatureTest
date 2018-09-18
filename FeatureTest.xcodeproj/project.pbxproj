@@ -12,6 +12,10 @@
 		472F7B22203CF7EC0003A747 /* Lottie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 472F7B21203CF7EC0003A747 /* Lottie.framework */; };
 		472F7B24203CF8160003A747 /* equalizer_corrected.json in Resources */ = {isa = PBXBuildFile; fileRef = 472F7B23203CF8160003A747 /* equalizer_corrected.json */; };
 		472F7B26203CF9F20003A747 /* Lottie.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 472F7B21203CF7EC0003A747 /* Lottie.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		474439102151671D0005147E /* PhotoPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4744390F2151671D0005147E /* PhotoPageViewController.swift */; };
+		47443912215167350005147E /* PreviewPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47443911215167350005147E /* PreviewPhotoViewController.swift */; };
+		474439172151A77F0005147E /* PhotoSlideshow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 474439162151A77F0005147E /* PhotoSlideshow.storyboard */; };
+		47611FC4214984D1007731D3 /* AutoLayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47611FC3214984D1007731D3 /* AutoLayoutViewController.swift */; };
 		47B12DBA2040E72800FB3068 /* UIVC+Extension+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B12DB92040E72800FB3068 /* UIVC+Extension+Keyboard.swift */; };
 		47B40E642023967A00D3E176 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B40E632023967A00D3E176 /* AppDelegate.swift */; };
 		47B40E692023967A00D3E176 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47B40E672023967A00D3E176 /* Main.storyboard */; };
@@ -37,7 +41,7 @@
 		47BB36082040CFC500F9E095 /* FloatingActionButton.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47BB36072040CFC500F9E095 /* FloatingActionButton.storyboard */; };
 		47BB360A2040CFDB00F9E095 /* FloatingActionWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BB36092040CFDB00F9E095 /* FloatingActionWindow.swift */; };
 		47BB360C2040D14700F9E095 /* FloatingActionButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BB360B2040D14700F9E095 /* FloatingActionButtonViewController.swift */; };
-		47BB36122040DB7200F9E095 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BB36112040DB7200F9E095 /* MainViewController.swift */; };
+		47BB36122040DB7200F9E095 /* PagingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BB36112040DB7200F9E095 /* PagingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +80,10 @@
 		472F7B1B203CF1E00003A747 /* LottieAnimation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LottieAnimation.storyboard; sourceTree = "<group>"; };
 		472F7B21203CF7EC0003A747 /* Lottie.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Lottie.framework; path = Carthage/Build/iOS/Lottie.framework; sourceTree = "<group>"; };
 		472F7B23203CF8160003A747 /* equalizer_corrected.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = equalizer_corrected.json; sourceTree = "<group>"; };
+		4744390F2151671D0005147E /* PhotoPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPageViewController.swift; sourceTree = "<group>"; };
+		47443911215167350005147E /* PreviewPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewPhotoViewController.swift; sourceTree = "<group>"; };
+		474439162151A77F0005147E /* PhotoSlideshow.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PhotoSlideshow.storyboard; sourceTree = "<group>"; };
+		47611FC3214984D1007731D3 /* AutoLayoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoLayoutViewController.swift; sourceTree = "<group>"; };
 		47B12DB92040E72800FB3068 /* UIVC+Extension+Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIVC+Extension+Keyboard.swift"; sourceTree = "<group>"; };
 		47B40E602023967A00D3E176 /* FeatureTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FeatureTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		47B40E632023967A00D3E176 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -107,7 +115,7 @@
 		47BB36072040CFC500F9E095 /* FloatingActionButton.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FloatingActionButton.storyboard; sourceTree = "<group>"; };
 		47BB36092040CFDB00F9E095 /* FloatingActionWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingActionWindow.swift; sourceTree = "<group>"; };
 		47BB360B2040D14700F9E095 /* FloatingActionButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingActionButtonViewController.swift; sourceTree = "<group>"; };
-		47BB36112040DB7200F9E095 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		47BB36112040DB7200F9E095 /* PagingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +162,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		474439152151A1DC0005147E /* Photo Slideshow */ = {
+			isa = PBXGroup;
+			children = (
+				4744390F2151671D0005147E /* PhotoPageViewController.swift */,
+				47443911215167350005147E /* PreviewPhotoViewController.swift */,
+				474439162151A77F0005147E /* PhotoSlideshow.storyboard */,
+			);
+			path = "Photo Slideshow";
+			sourceTree = "<group>";
+		};
 		47B12DBC2040E77F00FB3068 /* UIVCExtensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -187,10 +205,11 @@
 			isa = PBXGroup;
 			children = (
 				47BB36132040DB8500F9E095 /* Features */,
+				47BB36112040DB7200F9E095 /* PagingViewController.swift */,
 				47B40E952023972500D3E176 /* Views */,
 				47B40E942023970700D3E176 /* Extensions */,
 				47B40E672023967A00D3E176 /* Main.storyboard */,
-				47BB36112040DB7200F9E095 /* MainViewController.swift */,
+				47611FC3214984D1007731D3 /* AutoLayoutViewController.swift */,
 				47B40E632023967A00D3E176 /* AppDelegate.swift */,
 				47B40E6D2023967A00D3E176 /* Assets.xcassets */,
 				47B40E6F2023967A00D3E176 /* LaunchScreen.storyboard */,
@@ -300,6 +319,7 @@
 			children = (
 				47C52DDE2024F50500090160 /* Floating Icon */,
 				472F7B16203CF1A60003A747 /* LottieAnimation */,
+				474439152151A1DC0005147E /* Photo Slideshow */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -426,6 +446,7 @@
 				47B40EB92023D0E200D3E176 /* Repeat.storyboard in Resources */,
 				47BB36082040CFC500F9E095 /* FloatingActionButton.storyboard in Resources */,
 				472F7B1C203CF1E00003A747 /* LottieAnimation.storyboard in Resources */,
+				474439172151A77F0005147E /* PhotoSlideshow.storyboard in Resources */,
 				47B40E6E2023967A00D3E176 /* Assets.xcassets in Resources */,
 				472F7B24203CF8160003A747 /* equalizer_corrected.json in Resources */,
 				47B40EA12023996B00D3E176 /* UIDevice.storyboard in Resources */,
@@ -467,11 +488,14 @@
 				47B40EA820239DAD00D3E176 /* UIColor+Extensions.swift in Sources */,
 				47B40EB72023CAAC00D3E176 /* ReachabilityViewController.swift in Sources */,
 				47B40EAE2023A09000D3E176 /* Int+Extensions.swift in Sources */,
-				47BB36122040DB7200F9E095 /* MainViewController.swift in Sources */,
+				47BB36122040DB7200F9E095 /* PagingViewController.swift in Sources */,
 				47B40EB02023A0FA00D3E176 /* RepeatViewController.swift in Sources */,
 				47BB360C2040D14700F9E095 /* FloatingActionButtonViewController.swift in Sources */,
 				47B40E6C2023967A00D3E176 /* FeatureTest.xcdatamodeld in Sources */,
+				474439102151671D0005147E /* PhotoPageViewController.swift in Sources */,
 				47B40EB22023CA1B00D3E176 /* Reachability.swift in Sources */,
+				47443912215167350005147E /* PreviewPhotoViewController.swift in Sources */,
+				47611FC4214984D1007731D3 /* AutoLayoutViewController.swift in Sources */,
 				47B40EA32023997B00D3E176 /* UIDeviceViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
